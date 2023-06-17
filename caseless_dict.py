@@ -11,8 +11,12 @@ class CaselessDict(dict):
             return value
         elif (value := super().get(key.upper())) is not None:
             return value
+        elif (value := super().get(key.title())) is not None:
+            return value
+        elif (value := super().get(key.swapcase())) is not None:
+            return value
         return default
-    
+
     def __getitem__(self, key):
         if (value := super().__getitem__(key)) is not None:
             return value
@@ -21,5 +25,9 @@ class CaselessDict(dict):
         elif (value := super().__getitem__(key.capitalize())) is not None:
             return value
         elif (value := super().__getitem__(key.upper())) is not None:
+            return value
+        elif (value := super().__getitem__(key.title())) is not None:
+            return value
+        elif (value := super().__getitem__(key.swapcase())) is not None:
             return value
         return super().__getitem__(key)
