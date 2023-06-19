@@ -10,8 +10,8 @@ lst[20:25]
 * Headers
 
 ```py
-headers = Headers({b"Content-Type": b"text/*"})
+headers = Headers({b"Content-Type": b"text/plain"})
 headers["content-type"]
 
-# text/*
+# text/plain
 ```
